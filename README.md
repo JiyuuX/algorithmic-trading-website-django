@@ -28,3 +28,6 @@ Explanation:
 In this project, two algorithms are designed that will work with a simple trade mechanic. The 'basic' algorithm is suitable for trading when operating in market conditions with high volatility.
 The 'advanced' algorithm is based on the use of Technical Analysis. It works according to the combined use of RSI and MACD indicators and oscillators. When favorable conditions occur, it generates a trade signal and performs BTC buying and selling.
 In this context, Python's Django framework is used and JS backend, HTML, CSS front-end design is used. For instant values ​​of Technical Indicators, data was taken from taapi.io API. The python-binance module was also used to send buy-sell requests to the Binance exchange.
+
+![image](https://github.com/JiyuuX/algorithmic-trading-website-django/assets/139239394/e2904f14-dbb7-4c3d-9282-66403d01f61a)
+
