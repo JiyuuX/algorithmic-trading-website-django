@@ -1,6 +1,7 @@
 # algorithmic-trading-website-django
 
 ATTENTION :
+
 This project was developed for educational purposes, for University Graduation Project. 
 DO NOT USE IT IN ANY FINANCIAL BENEFIT. 
 THE USERS ARE OWN COMPLETELY RESPONSIBLE FOR ANY DAMAGES THAT MAY OCCUR.
