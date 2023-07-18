@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+  	<style type="text/css">
+  		body{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+.box{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.box h1{
+  color: #3498db;
+  text-transform: uppercase;
+  font-weight: 600;
+
+}
+.box input[type = "text"],.box input[type = "password"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 4px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus{
+  width: 280px;
+  border-color: yellow;
+}
+
+.box input[type = "email"],.box input[type = "email"]{
+  border:0;
+  background:none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 4px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.box input[type = "email"]:focus,.box input[type = "email"]:focus{
+  width: 280px;
+  border-color: yellow;
+}
+
+.box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:hover {
+  background: #2ecc71;
+}
+
+.giris {
+
+  border-bottom: 2px solid yellow;
+   color: white;
+    background: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+
+}
+
+.giris a {
+  color:white;
+
+}
+
+
+
+
+.giris:hover{
+
+  background: #808000;
+}
+
+.error span {
+  color:red;
+
+}
+
+.banner video {
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+
+		}
+
+  	</style>
+    <meta charset="utf-8">
+    <title>َKayıt</title>
+    <link rel="stylesheet" href="login-style.css">
+  </head>
+
+
+  <body>
+
+  <div class="banner">
+
+		<video autoplay muted loop >
+			<source src="{% static 'videos/login_vid.mp4' type='video/mp4' %}">
+		</video>
+  </div>
+
+<div >
+  <form class="box" action="" method="post">
+    <h1> KAYIT OL </h1>
+
+    {% csrf_token %}
+    {{form.username}}
+    {{form.email}}
+    {{form.password1}}
+    {{form.password2}}
+
+    <input type="submit" name="" value="KayıtOL">
+      <div class="giris">
+        <a href="{% url 'home' %}"> <span> Anasayfa </span> </a>
+      </div>
+    <div class="error" >  <span> {{form.errors}}  </span>  </div>
+  </form>
+
+</div>
+
+
+  </body>
+</html>

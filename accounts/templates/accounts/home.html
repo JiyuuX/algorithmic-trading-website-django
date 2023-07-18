@@ -1,0 +1,295 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+
+		body {
+
+			margin: 0;
+			padding: 0;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		.banner {
+
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items:center;
+
+		}
+
+		.banner video {
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+
+		}
+
+		.banner .container {
+
+			position: relative;
+			z-index: 1;
+
+		}
+
+		.container {
+		width: 100%;
+		height: 100%;
+		background: none;
+
+}
+
+.menu ul{
+
+	display: inline-flex;
+	margin: 50px;
+
+}
+
+.menu ul li {
+
+	list-style: none;
+	margin: 0 20px;
+	color: #b2b1b1;
+	cursor: pointer;
+
+}
+
+.logo img {
+	width: 50px;
+	margin-top: -30px;
+	margin-right: 5px;
+}
+
+.logo span {
+	font-family: 'Russo One', sans-serif;
+	color: #fff;
+	width: 100px;
+	font-weight: 50px;
+	font-size: 20px;
+	border-bottom:3px solid #19d7f8;
+
+}
+
+.signup-btn{
+	color: #fff;
+	font-family: 'Russo One', sans-serif;
+	top:40px;
+	right:80px;
+	position: absolute;
+	border-radius: 24px;
+	border: 3px solid transparent;
+	background-image:  radial-gradient(circle at top left, #fd00da,#19d7f8 );
+	background-origin: border-box;
+	background-clip: border-box;
+}
+
+.signup-btn span {
+	color: #fff;
+
+	display: block;
+	padding: 8px 22px;
+
+}
+
+.register-btn span {
+	color:#fff;
+	display: block;
+	padding: 8px 22px;
+
+
+}
+
+
+.register-btn {
+	top:40px;
+	right:200px;
+	position: absolute;
+	font-family: 'Russo One', sans-serif;
+	border: 3px solid transparent;
+	border-radius: 24px;
+	background-image:  radial-gradient(circle at top left, #fd00da,#19d7f8 );
+	background-origin: border-box;
+	background-clip: border-box;
+
+}
+
+.ctdown {
+
+	position: absolute;
+	top: 120px;
+	left: 80px;
+	right: 80px;
+	bottom: 120px;
+	background: none;
+
+	background-attachment: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+
+
+}
+
+.ctdown h2 {
+	text-align: center;
+	font-size: 2em;
+	line-height: 50px;
+	color: white;
+	margin-top: -80px;
+}
+
+.ctdown h2 span {
+
+	display: block;
+	letter-spacing: 8px;
+	font-size: 1em;
+
+
+}
+
+.countdown{
+
+	display: flex;
+	margin-top: 30px;
+
+}
+
+.countdown div{
+	position: relative;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	background: #2F4F4F;
+	color: #fff;
+	margin: 0 15px;
+	font-size: 3em;
+	font-weight: 500;
+}
+
+.countdown div:before {
+
+	content: '';
+	position: absolute;
+	bottom: -30px;
+	left: 0;
+	width: 100%;
+	height: 35px;
+
+	color: black;
+	font-size: 0.35em;
+	line-height: 35px;
+	font-weight: 300;
+	background-image:  radial-gradient(circle at top left, #fd00da,#19d7f8 );
+	background-origin: border-box;
+	background-clip: border-box;
+}
+
+.countdown div#day:before{
+
+	content: 'Gün';
+
+}
+
+.countdown div#hour:before{
+
+	content: 'Saat';
+
+}
+
+.countdown div#minute:before{
+
+	content: 'Dakika';
+
+}
+
+.countdown div#second:before{
+
+	content: 'Saniye';
+
+}
+	</style>
+
+
+	<meta charset="utf-8">
+	<title> HOME </title>
+</head>
+
+<body>
+
+	<div class="banner">
+
+		<video autoplay muted  >
+			<source src="{% static 'videos/home_vid.mp4' type='video/mp4' %}">
+		</video>
+
+		<div class="container">
+			<div class="menu">
+				<ul>
+					<li class="logo"> <img src="{% static 'images/lubdub.png' %}">  <span> Trade </span> </li>
+					<li class="signup-btn"> <a href=" {% url 'login' %}"> <span> GIRIS </span></a> </li>
+					<li class="register-btn"> <a href="{% url 'register' %}"> <span> Kayıt OL </span> </a>  </li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="ctdown">
+			<h2><span> TRADING WITH SOFTWARE </span>  2022 </h2
+
+		</div>
+
+	</div>
+
+
+
+	<script type="text/javascript">
+		var countDate= new Date('Jan 1, 2021 , 00:00').getTime();
+
+		function newYear() {
+			var now = new Date().getTime();
+				gap = countDate - now;
+
+			var second = 1000;
+			var minute = second * 60;
+			var hour = minute * 60;
+			var day = hour * 24;
+
+			var d= Math.floor(gap / (day));
+			var h= Math.floor((gap % (day)) / (hour));
+			var m= Math.floor((gap % (hour)) / (minute));
+			var s= Math.floor((gap % (minute)) / (second));
+
+			document.getElementById('day').innerText=d ;
+			document.getElementById('hour').innerText=h ;
+			document.getElementById('minute').innerText=m ;
+			document.getElementById('second').innerText=s ;
+		}
+
+		setInterval(function(){
+
+			newYear();
+
+		},1000)
+
+
+	</script>
+
+
+</body>
+</html>
